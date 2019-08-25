@@ -1,0 +1,30 @@
+# how many instances is required for this service
+replicaCount: 1
+
+# Internal Docker container port
+containerPort: 5000
+
+# Override settings with environment variables
+# Add as many environment variables needed here. They will be automatically be injected into the Docker container
+envVar:
+  myVariable: "Hello World"
+
+image:
+  repository: sachinkundu/k8s-cncf-hel-demo
+  tag: v1 # Docker Image tag
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP # Expose the service internally in the Kubernetes cluster
+  port: 80
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

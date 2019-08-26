@@ -10,7 +10,7 @@ def hello_demo():
     return 'Hello from Demo'
 
 @app.route('/demo2')
-def hello_demo():
+def hello_again():
     return 'Hello Again'
 
 if __name__ == '__main__':

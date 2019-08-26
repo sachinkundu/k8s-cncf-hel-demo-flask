@@ -9,5 +9,9 @@ def hello_world():
 def hello_demo():
     return 'Hello from Demo'
 
+@app.route('/demo2')
+def hello_demo():
+    return 'Hello Again'
+
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')

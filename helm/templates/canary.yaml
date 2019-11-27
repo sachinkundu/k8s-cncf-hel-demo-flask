@@ -27,4 +27,4 @@ spec:
       - name: load-test
         url: http://load-tester.default/
         metadata:
-          cmd: "hey -z 2m -q 10 -c 2 http://servicea-k8s-cncf-hel-demo/"
+          cmd: "hey -z 2m -q 10 -c 2 http://servicea-k8s-cncf-hel-demo:5000/"

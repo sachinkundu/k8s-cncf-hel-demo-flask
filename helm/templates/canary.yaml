@@ -11,9 +11,11 @@ spec:
     kind: Deployment
     name: servicea-k8s-cncf-hel-demo
   service:
-    port: 5000
+    port: 80
+    targetPort: 5000
   canaryAnalysis:
-    interval: 10s
+    interval: 30s
+    maxWeight: 50
     stepWeight: 5
     threshold: 5
     metrics:
@@ -25,6 +27,7 @@ spec:
       interval: 1m
     webhooks:
       - name: load-test
+        type: rollout
         url: http://load-tester.default/
         metadata:
-          cmd: "hey -z 2m -q 10 -c 2 http://servicea-k8s-cncf-hel-demo:5000/"
+          cmd: "hey -z 2m -q 10 -c 2 http://servicea-k8s-cncf-hel-demo/"

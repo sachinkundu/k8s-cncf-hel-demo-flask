@@ -14,7 +14,7 @@ spec:
     port: 80
     targetPort: 5000
   canaryAnalysis:
-    interval: 30s
+    interval: 150s
     maxWeight: 50
     stepWeight: 5
     threshold: 5

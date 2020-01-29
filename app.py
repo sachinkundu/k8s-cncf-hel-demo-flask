@@ -4,8 +4,8 @@ from flask import Flask
 app = Flask(__name__)
 
 def get_hostname():
-    hostname_call = subprocess.run(["hostname", "-i"], stdout=subprocess.DEVNULL)
-    return hostname_call.stdout
+    hostname = subprocess.check_output(['hostname', '-i'], universal_newlines=True)
+    return hostname
 
 @app.route('/')
 def hello_world():
